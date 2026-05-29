@@ -1,0 +1,26 @@
+{
+  "name": "@mobile-toolbelt/cli",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mobile-toolbelt": "dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts --clean",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mobile-toolbelt/android": "workspace:*",
+    "@mobile-toolbelt/core": "workspace:*",
+    "@mobile-toolbelt/ios": "workspace:*",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}
