@@ -1,0 +1,20 @@
+{
+  "name": "@mobile-toolbelt/ios",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts --clean",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mobile-toolbelt/core": "workspace:*",
+    "@mobile-toolbelt/shared": "workspace:*",
+    "commander": "^12.1.0",
+    "sharp": "^0.33.5",
+    "zod": "^3.24.1"
+  }
+}
